@@ -4,6 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23181818'/%3E%3Ccircle cx='32' cy='26' r='14' fill='none' stroke='%23C5A059' stroke-width='2.5'/%3E%3Cpath d='M32 40 L32 50' stroke='%23C5A059' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M26 30 V22 H38 V30' fill='none' stroke='%23E0E0E0' stroke-width='2'/%3E%3Cpath d='M29 22 V27 M35 22 V25' stroke='%23E0E0E0' stroke-width='1.5'/%3E%3C/svg%3E">
 <title>Lost Places — Archive of the Forgotten</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
 :root{--bg:#0d0e0c;--panel:#171814;--muted:#a8a69f;--gold:#c7a46a;--line:#30312c}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:#eeeae1;font-family:Georgia,serif}a{text-decoration:none;color:inherit}button,input{font:inherit}.hero{min-height:92vh;padding:28px 7%;display:flex;flex-direction:column;justify-content:space-between;background:radial-gradient(circle at 75% 25%,#4a4133,#201f1a 36%,#0d0e0c 72%)}nav{display:flex;justify-content:space-between;align-items:center}.logo{font:800 14px Arial;letter-spacing:4px}.links{display:flex;gap:28px;font:14px Arial}.links a:hover{color:var(--gold)}.eyebrow{font:12px Arial;letter-spacing:4px;color:var(--gold);text-transform:uppercase}.hero h1{font-size:clamp(65px,11vw,135px);font-weight:400;line-height:.86;margin:18px 0}.hero p{font:18px Arial;color:#c4c0b7;max-width:610px}.scroll{font:11px Arial;letter-spacing:3px;color:#888}section{padding:100px 7%}.head{display:flex;justify-content:space-between;gap:35px;align-items:end;margin-bottom:40px}.head h2{font-size:55px;font-weight:400;line-height:1;margin:8px 0 0}.head p{max-width:430px;color:var(--muted);font:15px Arial}.controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}.search{width:260px;background:#151613;border:1px solid #3b3c36;color:#fff;padding:13px 15px;outline:0}.search:focus{border-color:var(--gold)}.filter{background:transparent;border:1px solid #444;color:#ddd;padding:12px 18px;cursor:pointer}.filter:hover,.filter.active{background:var(--gold);color:#111;border-color:var(--gold)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:var(--panel);border:1px solid var(--line);overflow:hidden;transition:.25s}.card:hover{transform:translateY(-6px);border-color:#6c593c}.photo{height:245px;position:relative;background:#292a25;overflow:hidden}.photo img{width:100%;height:100%;object-fit:cover;display:block;transition:.4s;filter:saturate(.75)}.card:hover img{transform:scale(1.04);filter:saturate(1)}.credit{position:absolute;left:10px;bottom:8px;z-index:2;font:9px Arial;color:#d0ccc3;background:rgba(0,0,0,.48);padding:4px 6px;letter-spacing:.2px;pointer-events:none}.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(0,0,0,.45))}.body{padding:22px}.meta{font:11px Arial;color:var(--gold);letter-spacing:2px;text-transform:uppercase}.body h3{font-size:27px;font-weight:400;margin:7px 0}.body p{font:14px Arial;color:#9f9d96;min-height:45px}.story{margin-top:15px;background:none;border:0;padding:0;color:var(--gold);font:12px Arial;letter-spacing:1px;cursor:pointer}.story:hover{text-decoration:underline}.empty{display:none;color:#888;font:14px Arial}.about{background:#161714;display:grid;grid-template-columns:1fr 1fr;gap:80px}.about h2{font-size:55px;font-weight:400;line-height:1}.about p{font:16px Arial;color:#aaa;margin:0 0 18px}.facts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:25px}.fact{border:1px solid #34352f;padding:24px}.fact strong{display:block;color:var(--gold);font-size:34px}.fact span{font:11px Arial;color:#888;letter-spacing:2px}.form{display:flex;gap:10px;flex-wrap:wrap}.form input{background:#151613;border:1px solid #3b3c36;color:#fff;padding:14px;outline:0}.form input:focus{border-color:var(--gold)}.submit{background:var(--gold);border:1px solid var(--gold);padding:14px 20px;cursor:pointer}.success{display:none;color:var(--gold);font:14px Arial;margin-top:18px}.modal{display:none;position:fixed;inset:0;background:#000c;z-index:10;align-items:center;justify-content:center;padding:24px}.modal.open{display:flex}.box{max-width:700px;width:100%;background:#191a17;border:1px solid #555;padding:38px;position:relative}.close{position:absolute;right:15px;top:8px;background:none;border:0;color:white;font-size:30px;cursor:pointer}.box h2{font-size:45px;font-weight:400;margin:10px 0 18px}.box p{font:15px Arial;color:#aaa;line-height:1.8}footer{padding:45px 7%;border-top:1px solid #292a26;display:flex;justify-content:space-between;color:#777;font:13px Arial}@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}.about{grid-template-columns:1fr}}@media(max-width:600px){.hero{padding:25px 5%}.links{display:none}section{padding:75px 5%}.grid{grid-template-columns:1fr}.head{display:block}.head h2,.about h2{font-size:42px;margin-bottom:20px}.form{flex-direction:column}.form input,.submit{width:100%}footer{display:block}footer div+div{margin-top:10px}}
 </style>
@@ -46,6 +47,51 @@ const cards=[...document.querySelectorAll('.card')],buttons=[...document.querySe
 function filter(){const q=search.value.toLowerCase().trim(),cat=document.querySelector('.filter.active').dataset.filter;let n=0;cards.forEach(c=>{const ok=(cat==='all'||c.dataset.cat===cat)&&c.dataset.name.includes(q);c.style.display=ok?'block':'none';if(ok)n++});empty.style.display=n?'none':'block'}
 buttons.forEach(b=>b.onclick=()=>{buttons.forEach(x=>x.classList.remove('active'));b.classList.add('active');filter()});search.oninput=filter;
 const modal=document.getElementById('modal'),title=document.getElementById('modalTitle'),text=document.getElementById('modalText');document.querySelectorAll('.story').forEach(b=>b.onclick=()=>{title.textContent=b.dataset.place;text.textContent=stories[b.dataset.place];modal.classList.add('open')});document.getElementById('close').onclick=()=>modal.classList.remove('open');modal.onclick=e=>{if(e.target===modal)modal.classList.remove('open')};document.onkeydown=e=>{if(e.key==='Escape')modal.classList.remove('open')};
-document.getElementById('form').onsubmit=e=>{e.preventDefault();document.getElementById('success').style.display='block';e.target.reset()};
+
+const SUPABASE_URL = "https://dzyurctfaujlzeipkdlc.supabase.co/rest/v1/";
+const SUPABASE_KEY = "sb_publishable_iyTap-wq76A5xb645DX7RQ_8jCUIQE9";
+
+const supabaseClient = supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+document.getElementById('form').onsubmit = async e => {
+  e.preventDefault();
+
+  const form = e.target;
+  const place = document.getElementById('suggestion').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const success = document.getElementById('success');
+  const button = form.querySelector('.submit');
+
+  button.disabled = true;
+  button.textContent = "SENDING...";
+
+  const { error } = await supabaseClient
+    .from('suggestions')
+    .insert({
+      place_name: place,
+      email: email
+    });
+
+  if (error) {
+    console.error(error);
+
+    success.textContent = "✕ Something went wrong. Please try again.";
+    success.style.color = "#c96b6b";
+    success.style.display = "block";
+  } else {
+    success.textContent = "✓ Thanks! Your suggestion has been recorded.";
+    success.style.color = "var(--gold)";
+    success.style.display = "block";
+
+    form.reset();
+  }
+
+  button.disabled = false;
+  button.textContent = "SUBMIT LOCATION";
+};
+  
 </script>
 </body></html>
