@@ -48,7 +48,7 @@ function filter(){const q=search.value.toLowerCase().trim(),cat=document.querySe
 buttons.forEach(b=>b.onclick=()=>{buttons.forEach(x=>x.classList.remove('active'));b.classList.add('active');filter()});search.oninput=filter;
 const modal=document.getElementById('modal'),title=document.getElementById('modalTitle'),text=document.getElementById('modalText');document.querySelectorAll('.story').forEach(b=>b.onclick=()=>{title.textContent=b.dataset.place;text.textContent=stories[b.dataset.place];modal.classList.add('open')});document.getElementById('close').onclick=()=>modal.classList.remove('open');modal.onclick=e=>{if(e.target===modal)modal.classList.remove('open')};document.onkeydown=e=>{if(e.key==='Escape')modal.classList.remove('open')};
 
-const SUPABASE_URL = "https://dzyurctfaujlzeipkdlc.supabase.co/rest/v1/";
+const SUPABASE_URL = "https://dzyurctfaujlzeipkdlc.supabase.co";
 const SUPABASE_KEY = "sb_publishable_iyTap-wq76A5xb645DX7RQ_8jCUIQE9";
 
 const supabaseClient = supabase.createClient(
